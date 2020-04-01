@@ -39,5 +39,11 @@
           <span>Movie</span></a>
       </li>
 
+      <li class="nav-item <?php echo ($halaman == 'movie/tambah') ? 'active' : '' ?>">
+        <a class="nav-link" href="<?php echo base_url('movie/tambah') ?>">
+          <i class="fas fa-fw fa-plus"></i>
+          <span>Tambah Movie</span></a>
+      </li>
+
     </ul>
     <!-- End of Sidebar -->

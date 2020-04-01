@@ -1,5 +1,22 @@
 <div class="container">
-  <a href="#" class="btn btn-primary btn-sm mb-2"><i class="fas fa-plus"></i> Tambah</a>
+  <div class="row">
+    <div class="col-md-3 mb-2">
+      <form class="form-inline" action="index.html" method="post">
+        <div class="form-group">
+          <select class="form-control" name="genre">
+            <option value="">Horror</option>
+            <option value="">Thriller</option>
+            <option value="">Romantic</option>
+            <option value="">Comedy</option>
+          </select>
+        </div>
+        &nbsp;
+        &nbsp;
+        <button type="submit" class="btn btn-info" name="cari">Cari</button>
+      </form>
+    </div>
+  </div>
+
   <div class="row">
     <?php foreach($movie as $movie) : ?>
     <div class="col-md-3 mt-2">
