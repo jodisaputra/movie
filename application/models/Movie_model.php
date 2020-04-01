@@ -19,4 +19,10 @@ class Movie_model extends CI_Model
     return $this->db->insert('movie', $data);
   }
 
+  public function update($id, $data)
+  {
+    $this->db->where('id_movie', $id);
+    return $this->db->update('movie', $data);
+  }
+
 }

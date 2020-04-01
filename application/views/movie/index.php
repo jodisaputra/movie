@@ -32,7 +32,7 @@
           <hr>
           <a href="<?php echo base_url('movie/detail/' . $movie->id_movie) ?>" class="btn btn-info btn-sm">Selengkapnya</a>
           <a href="<?php echo base_url('movie/edit/' . $movie->id_movie) ?>" class="btn btn-warning btn-sm float-right"><i class="fas fa-edit"></i></a>
-          <a href="<?php echo base_url('movie/delete/' . $movie->id_movie) ?>" class="btn btn-danger btn-sm float-right"><i class="fas fa-trash"></i></a>
+          <a href="<?php echo base_url('movie/delete/' . $movie->id_movie) ?>" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')" class="btn btn-danger btn-sm float-right"><i class="fas fa-trash"></i></a>
         </div>
       </div>
     </div>
