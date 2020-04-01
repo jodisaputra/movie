@@ -7,15 +7,18 @@
           </div>
           <div class="card-body">
             <form action="<?php echo base_url('movie/store') ?>" method="post" enctype="multipart/form-data">
+              <?php echo $this->session->flashdata('message') ?>
 
               <div class="form-group">
                 <label>Judul Film</label>
-                <input type="text" name="judul_film" class="form-control">
+                <input type="text" name="judul_film" class="form-control" value="<?php echo set_value('judul_film') ?>">
+                <small class="text-danger"><?php echo form_error('judul_film') ?></small>
               </div>
 
               <div class="form-group">
                 <label>Deskripsi Film</label>
-                <textarea name="deskripsi" class="form-control" rows="5" cols="80"></textarea>
+                <textarea name="deskripsi" class="form-control" rows="5" cols="80"><?php echo set_value('deskripsi') ?></textarea>
+                <small class="text-danger"><?php echo form_error('deskripsi') ?></small>
               </div>
 
               <div class="form-group">
@@ -25,7 +28,8 @@
 
               <div class="form-group">
                 <label>Tanggal</label>
-                <input type="date" name="judul_film" class="form-control">
+                <input type="date" name="tanggal" class="form-control" value="<?php echo set_value('tanggal') ?>">
+                <small class="text-danger"><?php echo form_error('tanggal') ?></small>
               </div>
 
               <div class="form-group">

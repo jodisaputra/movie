@@ -17,14 +17,16 @@
     </div>
   </div>
 
+  <?php echo $this->session->flashdata('message') ?>
+
   <div class="row">
     <?php foreach($movie as $movie) : ?>
     <div class="col-md-3 mt-2">
       <div class="card">
-        <img src="<?php echo base_url() ?>asset/picture/1.jpg" class="card-img-top" alt="...">
+        <img src="<?php echo base_url() ?>asset/picture/<?php echo $movie->gambar  ?>" class="card-img-top" width="30%">
         <div class="card-body">
           <h5 class="card-title"><?php echo $movie->judul ?></h5>
-          <p class="card-text"><?php echo substr($movie->detail, 0, 60) ?></p>
+          <p class="card-text"><?php echo substr($movie->detail, 0, 30) ?></p>
           <small class="text-danger float-right"><?php echo date('d F Y', strtotime($movie->tanggal)) ?></small>
           <br>
           <hr>
