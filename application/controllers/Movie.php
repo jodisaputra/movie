@@ -5,6 +5,7 @@ class Movie extends CI_Controller
   public function __construct()
   {
     parent::__construct();
+    check_not_login();
     $this->load->model('movie_model');
   }
 
