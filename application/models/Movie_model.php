@@ -23,6 +23,14 @@ class Movie_model extends CI_Model
   {
     $this->db->where('id_movie', $id);
     return $this->db->update('movie', $data);
-  }
+	}
+	
+	public function getKeyword($keyword)
+	{
+		$this->db->select('*');
+		$this->db->from('movie');
+		$this->db->like('genre', $keyword);
+		return $this->db->get()->result();
+	}
 
 }

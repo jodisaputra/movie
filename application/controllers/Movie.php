@@ -129,7 +129,8 @@ class Movie extends CI_Controller
     $detail   = $this->input->post('deskripsi');
     $dibuat   = $this->session->userdata('name');
     $tanggal  = $this->input->post('tanggal');
-    $genre    = $this->input->post('genre');
+		$genre    = $this->input->post('genre');
+		$gambar   = $_FILES['gambar'];
 
     if(!empty($_FILES['gambar']['name']))
     {
@@ -141,7 +142,8 @@ class Movie extends CI_Controller
        if(!$this->upload->do_upload('gambar')){
          echo $this->upload->display_errors();die();
        } else {
-        $gambar = $this->upload->data('file_name');
+				$gambar = $this->upload->data('file_name');
+				$upload = $gambar;
        }
     }
     else
@@ -155,10 +157,10 @@ class Movie extends CI_Controller
         'detail'      => $detail,
         'dibuat_oleh' => $dibuat,
         'tanggal'     => $tanggal,
-        'genre'       => $genre
+				'genre'       => $genre,
     ];
 
-    $this->movie_model->update($id,$data);
+    $this->movie_model->update($id,$data, $upload);
     $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show" role="alert">
       Data berhasil diubah
       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -166,7 +168,18 @@ class Movie extends CI_Controller
       </button>
     </div>');
     redirect(base_url('movie'));
-  }
+	}
+	
+	public function cari()
+	{
+		$keyword = $this->input->post('genre');
+		$data['movie']	= $this->movie_model->getKeyword($keyword);
+		$this->load->view('includes/header');
+    $this->load->view('includes/sidebar');
+    $this->load->view('includes/topbar');
+    $this->load->view('movie/index', $data);
+    $this->load->view('includes/footer');
+	}
 
   public function delete($id)
   {

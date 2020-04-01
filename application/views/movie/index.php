@@ -1,13 +1,13 @@
 <div class="container">
   <div class="row">
     <div class="col-md-3 mb-2">
-      <form class="form-inline" action="index.html" method="post">
+      <form class="form-inline" action="<?= base_url('movie/cari') ?>" method="post">
         <div class="form-group">
           <select class="form-control" name="genre">
-            <option value="">Horror</option>
-            <option value="">Thriller</option>
-            <option value="">Romantic</option>
-            <option value="">Comedy</option>
+            <option value="horror">Horror</option>
+            <option value="thriller">Thriller</option>
+            <option value="romantic">Romantic</option>
+            <option value="comedy">Comedy</option>
           </select>
         </div>
         &nbsp;

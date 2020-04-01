@@ -6,7 +6,7 @@ class Auth extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		check_already_login();
+		// check_already_login();
 		$this->load->model('user_model');
 	}
 
@@ -30,7 +30,9 @@ class Auth extends CI_Controller
 					'name'			=> $row->name
 				];
 				$this->session->set_userdata($data);
-				redirect(base_url('dashboard'));
+				// redirect(base_url('dashboard'));
+				redirect(base_url('movie'));
+
 			}
 			else
 			{
@@ -45,7 +47,7 @@ class Auth extends CI_Controller
 		}
 	}
 
-	public function logout()
+	public function log_out()
 	{
 		$data = [
 			'id_user', 'name'

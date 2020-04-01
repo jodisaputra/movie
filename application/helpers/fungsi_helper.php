@@ -7,7 +7,9 @@ function check_already_login()
   $user_session = $ci->session->userdata('id_user');
   if($user_session)
   {
-    redirect('dashboard');
+		// redirect('dashboard');
+    redirect('movie');
+		
   }
 }
 
