@@ -8,6 +8,7 @@
             <div class="card-body">
               <img src="<?php echo base_url('asset/picture/' . $detailmovie->gambar) ?>" class="img-fluid img-thumbnail mb-3" width="30%" alt="">
               <p><?php echo $detailmovie->detail ?></p>
+							<small class="text-danger float-right"><i>Posted By: <?php echo $detailmovie->dibuat_oleh ;?></i></small>
               <a href="<?php echo base_url('movie') ?>" class="btn btn-info btn-sm mb-4">Kembali</a>
             </div>
           </div>
