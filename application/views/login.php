@@ -62,6 +62,10 @@
 						</button>
 					</div>
 
+					<div class="form-group mt-4">
+						<p>Username:admin</p>
+						<p>Password:admin</p>
+					</div>
 				</form>
 			</div>
 		</div>
