@@ -158,8 +158,8 @@ class Movie extends CI_Controller
         'dibuat_oleh' => $dibuat,
         'tanggal'     => $tanggal,
 				'genre'       => $genre,
+        'gambar'      => $gambar
     ];
-
     $this->movie_model->update($id,$data, $upload);
     $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show" role="alert">
       Data berhasil diubah

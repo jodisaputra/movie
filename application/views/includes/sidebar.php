@@ -5,7 +5,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo base_url('dashboard') ?>">
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-video"></i>
         </div>
@@ -17,12 +17,12 @@
 
       <?php $halaman = $this->uri->segment(1) ?>
 
-      <!-- Nav Item - Dashboard
+      <!-- Nav Item - Dashboard -->
       <li class="nav-item <?php echo ($halaman == 'dashboard') ? 'active' : '' ?>">
         <a class="nav-link" href="<?php echo base_url('dashboard') ?>">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
-      </li> -->
+      </li>
 
       <!-- Divider -->
       <hr class="sidebar-divider">

@@ -8,6 +8,12 @@ class Movie_model extends CI_Model
     return $this->db->get('movie')->result();
   }
 
+  public function listmovie()
+  {
+    $this->db->order_by('id_movie', 'DESC');
+    return $this->db->get('movie')->result();
+  }
+
   public function getMovieById($id)
   {
     $this->db->where('id_movie', $id);

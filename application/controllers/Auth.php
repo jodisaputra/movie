@@ -30,8 +30,8 @@ class Auth extends CI_Controller
 					'name'			=> $row->name
 				];
 				$this->session->set_userdata($data);
-				// redirect(base_url('dashboard'));
-				redirect(base_url('movie'));
+				redirect(base_url('dashboard'));
+				// redirect(base_url('movie'));
 
 			}
 			else
